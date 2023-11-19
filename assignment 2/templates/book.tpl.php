@@ -23,5 +23,9 @@
 <?php } ?>
 
 <?php function drawBook(Book $book) { ?>
-  <h2><?=$book->title?></h2>
+  <img src="../images/<?=$book->id?>.jpeg">
+  <p>Title: <?=$book->title?></p>
+  <p>Author: <?=$book->author?></p>
+  <p>Description: <?=$book->descr?></p>
+  <p>Price: <?=$book->price?>€</p>
 <?php } ?>
