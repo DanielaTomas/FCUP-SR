@@ -1,0 +1,2 @@
+sqlite3 example.db < example.sql
+php -S localhost:9000
