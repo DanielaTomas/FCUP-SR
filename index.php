@@ -14,6 +14,7 @@
   $books = Book::getBooks($db, intval(Book::countBooks($db)));
 
   drawHeader();
-  drawBooks($books);
+  if (isset($_SESSION['id'])) drawBooks($books);
+  else drawLoginForm();
   drawFooter();
 ?>

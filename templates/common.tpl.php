@@ -14,7 +14,6 @@
       <h1><a href="/">My Website</a></h1>
       <?php 
         if (isset($_SESSION['id'])) drawLogoutForm($_SESSION['name']);
-        else drawLoginForm();
       ?>
     </header>
   
@@ -32,16 +31,24 @@
 <?php } ?>
 
 <?php function drawLoginForm() { ?>
-  <form action="action_login.php" method="post" class="login">
-    <input type="email" name="email" placeholder="email">
-    <input type="password" name="password" placeholder="password">
-    <a href="register.php">Register</a>
-    <button type="submit">Login</button>
-  </form>
+  <div class="login-container">
+    <form action="action_login.php" method="post" class="login-form">
+      <h2>Login</h2>
+      <div class="input-group">
+        <label for="Email">Email</label>
+        <input type="email" id="email" name="email" placeholder="email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="password" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
 <?php } ?>
 
 <?php function drawLogoutForm(string $name) { ?>
-  <form action="action_logout.php" method="post" class="logout">
+  <form action="action_logout.php" method="post" class="logout-form">
     <?=$name?>
     <button type="submit">Logout</button>
   </form>

@@ -4,7 +4,6 @@
   session_start();
 
   require_once('database/connection.db.php');
-
   require_once('database/book.class.php');
 
   require_once('templates/common.tpl.php');
@@ -15,6 +14,7 @@
   $book = book::getBook($db, intval($_GET['id']));
 
   drawHeader();
-  drawBook($book);
+  if (isset($_SESSION['id'])) drawBook($book);
+  else header('Location: index.php');
   drawFooter();
 ?>
