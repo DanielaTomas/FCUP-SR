@@ -36,6 +36,17 @@
         $book['bookId'], 
         $book['title']
       );
-    }  
+    }
+    
+    static function countBooks(PDO $db){
+      $stmt = $db->prepare('
+      SELECT MAX(bookId)
+      FROM Book
+      ');
+      $stmt->execute(array());
+      $max = $stmt->fetch();
+
+    return $max['MAX(bookId)'];
+    }
   }
 ?>

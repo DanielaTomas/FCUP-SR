@@ -6,23 +6,15 @@
     public string $firstName;
     public string $lastName;
     public string $address;
-    public string $city;
-    public string $state;
-    public string $country;
-    public string $postalcode;
     public string $phone;
     public string $email;
 
-    public function __construct(int $id, string $firstName, string $lastName, string $address, string $city, string $state, string $country, string $postalcode, string $phone, string $email)
+    public function __construct(int $id, string $firstName, string $lastName, string $address, string $phone, string $email)
     {
       $this->id = $id;
       $this->firstName = $firstName;
       $this->lastName = $lastName;
       $this->address = $address;
-      $this->city = $city;
-      $this->state = $state;
-      $this->country = $country;
-      $this->postalcode = $postalcode;
       $this->phone = $phone;
       $this->email = $email;
     }
@@ -33,7 +25,7 @@
     
     static function getCustomerWithPassword(PDO $db, string $email, string $password) : ?Customer {
       $stmt = $db->prepare('
-        SELECT CustomerId, FirstName, LastName, Address, City, State, Country, PostalCode, Phone, Email
+        SELECT CustomerId, FirstName, LastName, Address, Phone, Email
         FROM Customer 
         WHERE lower(email) = ? AND password = ?
       ');
@@ -46,10 +38,6 @@
           $customer['FirstName'],
           $customer['LastName'],
           $customer['Address'],
-          $customer['City'],
-          $customer['State'],
-          $customer['Country'],
-          $customer['PostalCode'],
           $customer['Phone'],
           $customer['Email']
         );

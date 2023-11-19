@@ -11,7 +11,7 @@
 
   $db = getDatabaseConnection();
 
-  $books = Book::getBooks($db, 100);
+  $books = Book::getBooks($db, intval(Book::countBooks($db)));
 
   drawHeader();
   drawBooks($books);
