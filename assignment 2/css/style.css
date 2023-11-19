@@ -54,7 +54,7 @@ main a {
 #books article {
   display: grid;
   justify-content: center;
-  width: 200px;
+  width: 260px;
 }
 
 #books article * {
@@ -82,7 +82,7 @@ main a {
 .login-container {
   width: 300px;
   padding: 55px;
-  margin-inline-start: 40%;
+  margin-inline-start: 36%;
   border-radius: 8px;
   background-color: #e4e4e4;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -124,6 +124,41 @@ button {
 
 button:hover {
   background-color: #585757;
+}
+
+img {
+  width: 260px;
+  height: 350px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background-color: rgba(165, 165, 165, 0.7);
+  transition: opacity 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
 }
 
 footer {

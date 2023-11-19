@@ -9,8 +9,12 @@
   <section id="books">
     <?php foreach($books as $book) { ?> 
       <article>
-        <img src="https://picsum.photos/200?<?=$book->id?>">
-        <a href="book.php?id=<?=$book->id?>"><?=$book->title?></a>
+      <a href="book.php?id=<?=$book->id?>"><div class="image-container">
+        <img src="../images/<?=$book->id?>.jpeg">
+        <div class="overlay">
+          <button>More details</button>
+        </div>
+      </div></a>
       </article>
     <?php } ?>
   </section>

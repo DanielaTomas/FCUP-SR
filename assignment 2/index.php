@@ -11,7 +11,8 @@
 
   $db = getDatabaseConnection();
 
-  $books = Book::getBooks($db, intval(Book::countBooks($db)));
+  #$books = Book::getBooks($db, intval(Book::countBooks($db)));
+  $books = Book::getBooks($db, 40);
 
   drawHeader();
   if (isset($_SESSION['id'])) drawBooks($books);
