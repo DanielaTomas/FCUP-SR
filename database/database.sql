@@ -8,14 +8,14 @@ CREATE TABLE Book (
 );
 
 CREATE TABLE Customer (
-    CustomerId INTEGER  NOT NULL,
-    FirstName NVARCHAR(40) NOT NULL,
-    LastName NVARCHAR(20) NOT NULL,
-    Address NVARCHAR(70),
-    Phone NVARCHAR(24),
-    Email NVARCHAR(60) NOT NULL,
-    Password NVARCHAR(40) NOT NULL,
-    CONSTRAINT PK_Customer PRIMARY KEY (CustomerId)
+    customerId INTEGER  NOT NULL,
+    firstName NVARCHAR(40) NOT NULL,
+    lastName NVARCHAR(20) NOT NULL,
+    address NVARCHAR(70),
+    phone NVARCHAR(24),
+    email NVARCHAR(60) NOT NULL,
+    password NVARCHAR(40) NOT NULL,
+    CONSTRAINT PK_Customer PRIMARY KEY (customerId)
 );
 
 INSERT INTO Book (bookId, title) VALUES (1, 'To Kill a Mockingbird');
@@ -69,13 +69,13 @@ INSERT INTO Book (bookId, title) VALUES (48, 'Midnight''s Children');
 INSERT INTO Book (bookId, title) VALUES (49, 'The Alchemist');
 INSERT INTO Book (bookId, title) VALUES (50, 'Harry Potter and the Philosopher''s Stone');
 
-INSERT INTO Customer (CustomerId, FirstName, LastName, Address, Phone, Email, Password) VALUES (1, 'Daniela', 'Tomás', '123 Main St', '555-1234', 'daniela@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
-INSERT INTO Customer (CustomerId, FirstName, LastName, Address, Phone, Email, Password) VALUES (2, 'Diogo', 'Nunes', '456 Elm St', '555-5678', 'diogo@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
-INSERT INTO Customer (CustomerId, FirstName, LastName, Address, Phone, Email, Password) VALUES (3, 'João', 'Veloso', '789 Oak St', '555-9012', 'joao@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
-INSERT INTO Customer (CustomerId, FirstName, LastName, Address, Phone, Email, Password) VALUES (4, 'Alice', 'Brown', '101 Pine St', '555-3456', 'alice@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
-INSERT INTO Customer (CustomerId, FirstName, LastName, Address, Phone, Email, Password) VALUES (5, 'Bob', 'Wilson', '222 Cedar St', '555-7890', 'bob@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
-INSERT INTO Customer (CustomerId, FirstName, LastName, Address, Phone, Email, Password) VALUES (6, 'Carol', 'Martinez', '333 Maple St', '555-2345', 'carol@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
-INSERT INTO Customer (CustomerId, FirstName, LastName, Address, Phone, Email, Password) VALUES (7, 'Ted', 'Garcia', '444 Birch St', '555-6789', 'ted@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
-INSERT INTO Customer (CustomerId, FirstName, LastName, Address, Phone, Email, Password) VALUES (8, 'Jessica', 'Lee', '555 Walnut St', '555-1234', 'jessica@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
-INSERT INTO Customer (CustomerId, FirstName, LastName, Address, Phone, Email, Password) VALUES (9, 'David', 'Lopez', '666 Pineapple St', '555-5678', 'david@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
-INSERT INTO Customer (CustomerId, FirstName, LastName, Address, Phone, Email, Password) VALUES (10, 'Amanda', 'Nguyen', '777 Orange St', '555-9012', 'amanda@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
+INSERT INTO Customer (customerId, firstName, lastName, address, phone, email, password) VALUES (1, 'Daniela', 'Tomás', '123 Main St', '555-1234', 'daniela@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
+INSERT INTO Customer (customerId, firstName, lastName, address, phone, email, password) VALUES (2, 'Diogo', 'Nunes', '456 Elm St', '555-5678', 'diogo@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
+INSERT INTO Customer (customerId, firstName, lastName, address, phone, email, password) VALUES (3, 'João', 'Veloso', '789 Oak St', '555-9012', 'joao@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
+INSERT INTO Customer (customerId, firstName, lastName, address, phone, email, password) VALUES (4, 'Alice', 'Brown', '101 Pine St', '555-3456', 'alice@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
+INSERT INTO Customer (customerId, firstName, lastName, address, phone, email, password) VALUES (5, 'Bob', 'Wilson', '222 Cedar St', '555-7890', 'bob@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
+INSERT INTO Customer (customerId, firstName, lastName, address, phone, email, password) VALUES (6, 'Carol', 'Martinez', '333 Maple St', '555-2345', 'carol@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
+INSERT INTO Customer (customerId, firstName, lastName, address, phone, email, password) VALUES (7, 'Ted', 'Garcia', '444 Birch St', '555-6789', 'ted@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
+INSERT INTO Customer (customerId, firstName, lastName, address, phone, email, password) VALUES (8, 'Jessica', 'Lee', '555 Walnut St', '555-1234', 'jessica@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
+INSERT INTO Customer (customerId, firstName, lastName, address, phone, email, password) VALUES (9, 'David', 'Lopez', '666 Pineapple St', '555-5678', 'david@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');
+INSERT INTO Customer (customerId, firstName, lastName, address, phone, email, password) VALUES (10, 'Amanda', 'Nguyen', '777 Orange St', '555-9012', 'amanda@example.com', '0fcf9713d4855b88e573b6ef54fa15648e2f0f03');

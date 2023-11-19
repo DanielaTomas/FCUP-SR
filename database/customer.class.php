@@ -25,7 +25,7 @@
     
     static function getCustomerWithPassword(PDO $db, string $email, string $password) : ?Customer {
       $stmt = $db->prepare('
-        SELECT CustomerId, FirstName, LastName, Address, Phone, Email
+        SELECT customerId, firstName, lastName, address, phone, email
         FROM Customer 
         WHERE lower(email) = ? AND password = ?
       ');
@@ -34,12 +34,12 @@
   
       if ($customer = $stmt->fetch()) {
         return new Customer(
-          $customer['CustomerId'],
-          $customer['FirstName'],
-          $customer['LastName'],
-          $customer['Address'],
-          $customer['Phone'],
-          $customer['Email']
+          $customer['customerId'],
+          $customer['firstName'],
+          $customer['lastName'],
+          $customer['address'],
+          $customer['phone'],
+          $customer['email']
         );
       }
 
