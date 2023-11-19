@@ -9,12 +9,14 @@
   <section id="books">
     <?php foreach($books as $book) { ?> 
       <article>
-      <a href="book.php?id=<?=$book->id?>"><div class="image-container">
-        <img src="../images/<?=$book->id?>.jpeg">
-        <div class="overlay">
-          <button>More details</button>
+      <a href="book.php?id=<?=$book->id?>">
+        <div class="image-container">
+          <img src="../images/<?=$book->id?>.jpeg">
+          <div class="overlay">
+            <button>More details</button>
+          </div>
         </div>
-      </div></a>
+      </a>
       </article>
     <?php } ?>
   </section>
