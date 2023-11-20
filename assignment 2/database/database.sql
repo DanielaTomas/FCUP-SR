@@ -6,7 +6,7 @@ CREATE TABLE Book (
     title NVARCHAR(120) NOT NULL UNIQUE,
     author NVARCHAR(120) NOT NULL,
     /*category NVARCHAR(120),*/
-    price NVARCHAR(120) NOT NULL,
+    price FLOAT NOT NULL,
     descr text NOT NULL,
     CONSTRAINT PK_Book PRIMARY KEY (bookId)
 );

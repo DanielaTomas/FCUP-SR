@@ -6,9 +6,9 @@
     public string $title;
     public string $author;
     public string $descr;
-    public string $price;
+    public float $price;
 
-    public function __construct(int $id, string $title, string $author, string $descr, string $price)
+    public function __construct(int $id, string $title, string $author, string $descr, float $price)
     { 
       $this->id = $id;
       $this->title = $title;
