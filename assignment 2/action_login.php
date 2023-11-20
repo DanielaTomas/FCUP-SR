@@ -1,18 +1,23 @@
 <?php
   declare(strict_types = 1);
 
-  session_start();
+  require_once('classes/session.class.php');
+  $session = new Session();
 
   require_once('database/connection.db.php');
-  require_once('database/customer.class.php');
+  require_once('classes/customer.class.php');
 
   $db = getDatabaseConnection();
 
   $customer = Customer::getCustomerWithPassword($db, $_POST['email'], $_POST['password']);
 
   if ($customer) {
-    $_SESSION['id'] = $customer->id;
-    $_SESSION['name'] = $customer->name();
+    $session->setId($customer->id);
+    $session->setName($customer->name());
+    $session->addMessage('success', 'Login successful!');
+  }
+  else {
+    $session->addMessage('error', 'Wrong username or password!');
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);

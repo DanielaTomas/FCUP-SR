@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1); ?>
 
-<?php function drawHeader() { ?>
+<?php function drawHeader(Session $session) { ?>
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -14,10 +14,16 @@
     <header>
       <h1><a href="/">My Website</a></h1>
       <?php 
-        if (isset($_SESSION['id'])) drawLogoutForm($_SESSION['name']);
+        if ($session::login()) drawLogoutForm($session);
       ?>
     </header>
-  
+    <section id="messages">
+      <?php foreach ($session->getMessages() as $message) { ?>
+        <article class="<?=$message['type']?>">
+          <?=$message['text']?>
+        </article>
+      <?php } ?>
+    </section>
     <main>
 <?php } ?>
 
@@ -48,9 +54,9 @@
   </div>
 <?php } ?>
 
-<?php function drawLogoutForm(string $name) { ?>
+<?php function drawLogoutForm(Session $session) { ?>
   <form action="action_logout.php" method="post" class="logout-form">
-    <?=$name?>
+    <?=$session->getName()?>
     <button type="submit">Logout</button>
   </form>
 <?php } ?>

@@ -1,10 +1,11 @@
 <?php
   declare(strict_types = 1);
 
-  session_start();
+  require_once('classes/session.class.php');
+  $session = new Session();
 
   require_once('database/connection.db.php');
-  require_once('database/book.class.php');
+  require_once('classes/book.class.php');
 
   require_once('templates/common.tpl.php');
   require_once('templates/book.tpl.php');
@@ -14,8 +15,8 @@
   #$books = Book::getBooks($db, intval(Book::countBooks($db)));
   $books = Book::getBooks($db, 40);
 
-  drawHeader();
-  if (isset($_SESSION['id'])) drawBooks($books);
+  drawHeader($session);
+  if ($session::login()) drawBooks($books);
   else drawLoginForm();
   drawFooter();
 ?>

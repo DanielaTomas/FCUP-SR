@@ -168,3 +168,23 @@ footer {
   padding: 10px 0;
   bottom: 0;
 }
+
+#messages article {
+  margin: 1em 0;
+  padding-top: 1em;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#messages article.success {
+  color: green;
+}
+
+#messages article.warning {
+  color: yellow;
+}
+
+#messages article.error {
+  color: red;
+}

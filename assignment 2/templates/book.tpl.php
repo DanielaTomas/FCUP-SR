@@ -1,7 +1,7 @@
 <?php 
   declare(strict_types = 1); 
 
-  require_once('database/book.class.php')
+  require_once('classes/book.class.php')
 ?>
 
 <?php function drawBooks(array $books) { ?>
