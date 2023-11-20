@@ -6,6 +6,7 @@
   <head>
     <title>My Website</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -36,11 +37,11 @@
       <h2>Login</h2>
       <div class="input-group">
         <label for="Email">Email</label>
-        <input type="email" id="email" name="email" placeholder="email" required>
+        <input type="text" id="email" name="email" placeholder="email">
       </div>
       <div class="input-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="password" required>
+        <input type="password" id="password" name="password" placeholder="password">
       </div>
       <button type="submit">Login</button>
     </form>
