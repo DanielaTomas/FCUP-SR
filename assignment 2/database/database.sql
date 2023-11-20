@@ -42,7 +42,6 @@ INSERT INTO Book (bookId, title, author, descr, price) VALUES (17, 'The Odyssey'
 INSERT INTO Book (bookId, title, author, descr, price) VALUES (18, 'A Tale of Two Cities', 'Charles Dickens', 'Set in London and Paris during the French Revolution, this novel explores the contrasts between two cities and the turmoil of the time.', 13.50);
 INSERT INTO Book (bookId, title, author, descr, price) VALUES (19, 'Frankenstein', 'Mary Shelley', 'A Gothic novel exploring themes of creation, ambition, and societal rejection through the story of a scientist and his monstrous creation.', 12.75);
 INSERT INTO Book (bookId, title, author, descr, price) VALUES (20, 'The Picture of Dorian Gray', 'Oscar Wilde', 'A philosophical novel about the consequences of vanity and hedonism, exploring the portrait of a man that ages while he remains young and immoral.', 14.50);
-
 INSERT INTO Book (bookId, title, author, descr, price) VALUES (21, 'Crime and Punishment', 'Fyodor Dostoevsky', 'A psychological thriller delving into the mind of a young man who commits a murder and grapples with guilt and morality.', 14.99);
 INSERT INTO Book (bookId, title, author, descr, price) VALUES (22, 'The Brothers Karamazov', 'Fyodor Dostoevsky', 'A complex novel examining faith, morality, and family dynamics through the lives of three brothers.', 16.50);
 INSERT INTO Book (bookId, title, author, descr, price) VALUES (23, 'Wuthering Heights', 'Emily Brontë', 'A tragic love story set on the Yorkshire moors, exploring passion, revenge, and the destructive nature of love.', 12.25);

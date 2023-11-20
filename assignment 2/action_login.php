@@ -9,15 +9,22 @@
 
   $db = getDatabaseConnection();
 
-  $customer = Customer::getCustomerWithPassword($db, $_POST['email'], $_POST['password']);
+  $customer = Customer::getCustomerWithEmail($db, $_POST['email']);
 
-  if ($customer) {
-    $session->setId($customer->id);
-    $session->setName($customer->name());
-    $session->addMessage('success', 'Login successful!');
+  if(!$customer) {
+    $session->addMessage('error', "Invalid email " . $_POST['email']);
   }
   else {
-    $session->addMessage('error', 'Wrong username or password!');
+    $customer = Customer::getCustomerWithPassword($db, $_POST['email'], $_POST['password']);
+
+    if ($customer) {
+      $session->setId($customer->id);
+      $session->setName($customer->name());
+      $session->addMessage('success', 'Login successful!');
+    }
+    else {
+      $session->addMessage('error', "Invalid password " . $_POST['password']);
+    }
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
