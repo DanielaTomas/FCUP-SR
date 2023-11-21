@@ -7,18 +7,20 @@
     public string $author;
     public string $descr;
     public float $price;
+    public int $stock;
 
-    public function __construct(int $id, string $title, string $author, string $descr, float $price)
+    public function __construct(int $id, string $title, string $author, string $descr, float $price, int $stock)
     { 
       $this->id = $id;
       $this->title = $title;
       $this->author = $author;
       $this->descr = $descr;
       $this->price = $price;
+      $this->stock = $stock;
     }
 
     static function getBooks(PDO $db, int $count) : array {
-      $stmt = $db->prepare('SELECT bookId, title, author, descr, price FROM Book LIMIT ?');
+      $stmt = $db->prepare('SELECT bookId, title, author, descr, price, stock FROM Book LIMIT ?');
       $stmt->execute(array($count));
   
       $books = array();
@@ -28,7 +30,8 @@
           $book['title'],
           $book['author'],
           $book['descr'],
-          $book['price']
+          $book['price'],
+          $book['stock']
         );
       }
   
@@ -36,7 +39,7 @@
     }
 
     static function getBook(PDO $db, int $id) : Book {
-      $stmt = $db->prepare('SELECT bookId, title, author, descr, price FROM Book WHERE bookId = ?');
+      $stmt = $db->prepare('SELECT bookId, title, author, descr, price, stock FROM Book WHERE bookId = ?');
       $stmt->execute(array($id));
   
       $book = $stmt->fetch();
@@ -46,7 +49,8 @@
         $book['title'],
         $book['author'],
         $book['descr'],
-        $book['price']
+        $book['price'],
+        $book['stock']
       );
     }
     

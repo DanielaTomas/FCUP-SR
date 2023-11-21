@@ -28,4 +28,12 @@
   <p>Author: <?=$book->author?></p>
   <p>Description: <?=$book->descr?></p>
   <p>Price: <?=$book->price?>€</p>
+  <?php if($book->stock > 0) { ?>
+    <p>Quantity: <input name="n" type="number" value="1" min="1" max="<?=$book->stock?>" step="0"></p>
+    <form method="get">
+      <input type="submit" value="Buy">
+    </form>
+  <?php } else { ?>
+    <p style="color:red">Out of stock</p>
+  <?php } ?>
 <?php } ?>
