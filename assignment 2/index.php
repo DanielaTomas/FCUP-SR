@@ -12,11 +12,12 @@
 
   $db = getDatabaseConnection();
 
-  #$books = Book::getBooks($db, intval(Book::countBooks($db)));
-  $books = Book::getBooks($db, 40);
-
   drawHeader($session);
-  if ($session::login()) drawBooks($books);
+  if ($session::login()) {
+    #$books = Book::getBooks($db, intval(Book::countBooks($db)));
+    $books = Book::getBooks($db, 40);
+    drawBooks($books);
+  }
   else drawLoginForm();
   drawFooter();
 ?>

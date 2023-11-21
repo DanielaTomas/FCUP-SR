@@ -82,5 +82,10 @@
       return null;
     }
 
+    static function buyBook(PDO $db, int $stock, int $id) {
+      $stmt = $db->prepare('UPDATE Book SET stock = ? WHERE bookId = ?');
+      $stmt->execute(array($stock, $id));
+    }
+
   }
 ?>

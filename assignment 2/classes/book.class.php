@@ -62,7 +62,7 @@
       $stmt->execute(array());
       $max = $stmt->fetch();
 
-    return $max['MAX(bookId)'];
+      return $max['MAX(bookId)'];
     }
   }
 ?>

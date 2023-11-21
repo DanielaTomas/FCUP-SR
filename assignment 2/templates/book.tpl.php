@@ -29,9 +29,11 @@
   <p>Description: <?=$book->descr?></p>
   <p>Price: <?=$book->price?>€</p>
   <?php if($book->stock > 0) { ?>
-    <p>Quantity: <input name="n" type="number" value="1" min="1" max="<?=$book->stock?>" step="0"></p>
-    <form method="get">
-      <input type="submit" value="Buy">
+    <form action="action_buy.php" method="post">
+      <input type="hidden" name="id" value="<?=$book->id?>">
+      <p style="color:green">In stock</p>
+      <p>Quantity: <input name="quantity" type="number" value="<?=$book->title?>" min="1" max="<?=$book->stock?>" step="0"></p>
+      <button type="submit">Buy</button>
     </form>
   <?php } else { ?>
     <p style="color:red">Out of stock</p>
