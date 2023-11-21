@@ -25,6 +25,8 @@
 
     Customer::buyBook($db, $stock, $bookId);
 
-    header('Location: book.php?id=' . $bookId); //TODO
+    $session->addMessage('success', "Purchase successfully completed!");
+
+    header('Location: book.php?id=' . $bookId);
 
 ?>
