@@ -29,7 +29,7 @@
   <p>Description: <?=$book->descr?></p>
   <p>Price: <?=$book->price?>€</p>
   <?php if($book->stock > 0) { ?>
-    <form action="action_buy.php" method="post">
+    <form action="action_buy.php" method="post" class="buy_book">
       <input type="hidden" name="id" value="<?=$book->id?>">
       <p style="color:green">In stock (<?=$book->stock?>)</p>
       <p>Quantity: <input name="quantity" type="number" value="1" min="1" step="0"></p> <!-- max="$book->stock?>" -->
@@ -38,4 +38,14 @@
   <?php } else { ?>
     <p style="color:red">Out of stock</p>
   <?php } ?>
+
+  <br><br><br>
+  
+  <h2>Availability Check</h2>
+  <form action="action_ping.php" method="post" class="ping">
+      <label for="hostname">Enter IP or Hostname to check the availability of the book:</label>
+      <input type="hidden" name="id" value="<?=$book->id?>">
+      <input type="text" id="hostname" name="hostname">
+      <button type="submit">Ping</button>
+  </form>
 <?php } ?>

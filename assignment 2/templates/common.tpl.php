@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>My Website</title>
+    <title>Bookstore</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
@@ -12,7 +12,7 @@
   <body>
 
     <header>
-      <h1><a href="/">My Website</a></h1>
+      <h1><a href="/">Bookstore</a></h1>
       <?php 
         if ($session::login()) drawLogoutForm($session);
       ?>
@@ -31,7 +31,7 @@
     </main>
 
     <footer>
-      My Website &copy; 2023
+      Bookstore &copy; 2023
     </footer>
   </body>
 </html>

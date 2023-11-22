@@ -112,6 +112,20 @@ input[type="password"] {
   border: 1px solid #ccc;
 }
 
+input[type="number"] {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.ping > button {
+  margin-top:10px;
+}
+
+.ping > input[type="text"] {
+  width: 50%;
+}
+
 button {
   padding: 10px;
   border: none;
