@@ -12,6 +12,7 @@
   <body>
 
     <header>
+      <a href="ping.php"><button>Ping</button></a>
       <h1><a href="/">Bookstore</a></h1>
       <?php 
         if ($session::login()) drawLogoutForm($session);

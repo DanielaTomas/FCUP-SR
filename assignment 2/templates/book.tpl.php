@@ -38,14 +38,4 @@
   <?php } else { ?>
     <p style="color:red">Out of stock</p>
   <?php } ?>
-
-  <br><br><br>
-  
-  <h2>Availability Check</h2>
-  <form action="action_ping.php" method="post" class="ping">
-      <label for="hostname">Enter IP or Hostname to check the availability of the book:</label>
-      <input type="hidden" name="id" value="<?=$book->id?>">
-      <input type="text" id="hostname" name="hostname">
-      <button type="submit">Ping</button>
-  </form>
 <?php } ?>

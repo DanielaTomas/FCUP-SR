@@ -1,14 +1,8 @@
 <?php
-    declare(strict_types = 1);
-
-    require_once('classes/session.class.php');
-    $session = new Session();
-
-    if (!$session->login()) header('Location: index.php');
+  declare(strict_types = 1);
 ?>
 
-<h1>Ping Results</h1>
-
+<h2>Ping Results</h2>
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hostname = $_POST["hostname"];
@@ -19,12 +13,6 @@
 
             $pingResult = shell_exec("ping -c 4 " . $hostname);
 
-            if (strpos($pingResult, "64 bytes from") !== false) {
-                echo "<p style='color:green'>Book available at this location $hostname.</p>";
-            } 
-            else {
-                echo "<p style='color:red'>Book not available at this location $hostname.</p>";
-            }
             echo "<pre>Ping results for $sanitizedHostname:\n$pingResult</pre>";
         } 
         else {
@@ -33,5 +21,5 @@
     }
 ?>
 
-<a href="book.php?id=<?=intval($_POST['id'])?>">Go back</a>
+<a href="ping.php">Go back</a>
 
