@@ -10,7 +10,7 @@
 
         if (!empty($hostname)) {
             $pingResult = shell_exec("ping -c 4 " . $hostname);
-            echo "<pre>Ping results for $sanitizedHostname:\n$pingResult</pre>";
+            echo "<pre>Ping results for $hostname:\n$pingResult</pre>";
         } 
         else {
             echo "<p>Please enter a valid hostname or IP.</p>";
