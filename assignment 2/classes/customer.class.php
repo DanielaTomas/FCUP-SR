@@ -47,13 +47,14 @@
     }
     
     static function getCustomerWithPassword(PDO $db, string $email, string $password) : ?Customer {
-      $query = '
-      SELECT customerId, firstName, lastName, address, phone, email
-      FROM Customer 
-      WHERE lower(email) = "' . strtolower($email) . '" AND password = "' . sha1($password) . '"
-      ';
 
-      $stmt = $db->query($query);
+      $stmt = $db->prepare('
+        SELECT customerId, firstName, lastName, address, phone, email
+        FROM Customer 
+        WHERE lower(email) = ? AND password = ?
+      ');
+
+      $stmt->execute(array(strtolower($email), sha1($password)));
   
       if ($customer = $stmt->fetch()) {
         return new Customer(
