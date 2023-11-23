@@ -22,29 +22,6 @@
     function name() {
       return $this->firstName . ' ' . $this->lastName;
     }
-
-    static function getCustomerWithEmail(PDO $db, string $email) : ?Customer {
-      $query = '
-      SELECT customerId, firstName, lastName, address, phone, email
-      FROM Customer 
-      WHERE lower(email) = "' . strtolower($email) . '"
-      ';
-
-      $stmt = $db->query($query);
-  
-      if ($customer = $stmt->fetch()) {
-        return new Customer(
-          $customer['customerId'],
-          $customer['firstName'],
-          $customer['lastName'],
-          $customer['address'],
-          $customer['phone'],
-          $customer['email']
-        );
-      }
-
-      return null;
-    }
     
     static function getCustomerWithPassword(PDO $db, string $email, string $password) : ?Customer {
 
