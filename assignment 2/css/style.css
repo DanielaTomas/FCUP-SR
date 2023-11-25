@@ -91,6 +91,11 @@ main a {
   align-items: center;
 }
 
+.login-container a {
+  color: #333;
+ margin-top: 20px;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
