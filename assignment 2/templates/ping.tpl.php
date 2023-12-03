@@ -4,7 +4,7 @@
 
 <?php function drawPing() { ?>
     <h2>Ping</h2>
-    <form action="action_ping.php" method="post" class="ping">
+    <form action="action_ping.php" method="post" class="ping" autocomplete="off">
     <label for="hostname">Enter IP or Hostname:</label>
     <input type="hidden" name="id" value="<?=$book->id?>">
     <input type="text" id="hostname" name="hostname">
