@@ -40,7 +40,7 @@
 
 <?php function drawLoginForm() { ?>
   <div class="login-container">
-    <form action="action_login.php" method="post" class="login-form">
+    <form action="action_login.php" method="post" class="login-form" autocomplete="off">
       <h2>Login</h2>
       <div class="input-group">
         <label for="Email">Email</label>

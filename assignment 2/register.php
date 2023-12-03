@@ -7,7 +7,7 @@
     <body>
         <h2>Registration<br></h2>
         <div id="registration">
-          <form action="action_register.php" method="post">
+          <form action="action_register.php" method="post" autocomplete="off">
               <label for="registerfirstname"><p>First Name</p></label>
               <input type="text" name="registerfirstname" required>
 
